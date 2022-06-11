@@ -1,0 +1,45 @@
+.container{
+	background-color: #00bcd4;
+	width: 370px;
+	height: 315px;
+	margin: auto;
+}
+.signup{
+	margin: auto;
+	color: #c2ff3b;
+    width: 120px;
+    height: 50px;
+    font-size: 17px;
+}
+input[type="text"]{
+	width: 200px;
+    border-radius: 7px;
+    border-color: white;
+}
+label[for="field"]{
+	margin-left: 10px;
+	font-size: 16px;
+	color: white;
+}
+
+#name{
+	margin-left: 55px;
+}
+#email{
+	margin-left: 82px;
+}
+#password{
+	margin-left: 59px;
+}
+#contact{
+	margin-left: 14px;
+}
+.text::placeholder{
+	color: #00bcd4;
+}
+#submit{
+	margin-left: 140px;
+    color: #00bcd4;
+    background: #ffffff;
+    border-color: #ffffff;
+    font-size: 14px;

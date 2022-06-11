@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Validation Form</title>
+	<link rel="stylesheet" href="validation form.css">
+</head>
+<body>
+	<div class="container"><br><br>
+	<div class="signup">Sign Up For Free</div><br>
+	<form name="my_form">
+		<label for="field">Username:</label>
+		<input type="text" name="name" placeholder="Enter Username" id="name" class="text"><br><br>
+		<label for="field">Email:</label>
+		<input type="text" name="email" placeholder="Enter Email" id="email" class="text"><br><br>
+		<label for="field">Password:</label>
+		<input type="text" name="password" placeholder="Enter Password" id="password" class="text"><br><br>
+		<label for="field">Contact Number:</label>
+		<input type="text" name="phone" placeholder=" Enter Contact number" id="contact" class="text"><br><br><br>
+		<button type="button" onclick="validateForm()" id="submit">Submit</button>
+
+		
+	</form>
+</div>
+	<script type="text/javascript">
+		function validateForm(){
+			var name=document.my_form.name.value;
+			var email=document.my_form.email.value;
+			var password=document.my_form.password.value;
+			var contact=document.my_form.phone.value;
+			var at_index=email.indexOf('@');
+			var dot_index=email.lastIndexOf('.');
+			if (name==null || name=="") {
+				alert('Username field cannot be empty');
+				return false;
+			}
+			else if (name.length<3) {
+				alert('Username should contain atleast 3 characters');
+				return false;
+			}
+			else if (name.match(/[0-9]/)) {
+				alert('Number entry is not allowed in Username field');
+				return false;
+			}
+			else if (email==null || email=="") {
+				alert('Email field cannot be empty');
+				return false;
+			}
+			else if (email.match("@") == false || email.match(".") == false) {
+				alert('Enter valid email id');
+				return false;
+			}
+			else if (at_index < 1 || dot_index < at_index+2 || dot_index+2 >= email.length) {
+				alert('Enter valid email id');
+				return false;
+			}
+			else if (password==null || password=="") {
+				alert('Password field cannot be empty');
+				return false;
+			}
+			else if (password.length<6) {
+				alert('Password should contain atleast 6 characters');
+				return false;
+			}
+			else if (contact==null || contact=="") {
+				alert('Contact Number field cannot be empty');
+				return false;
+			}
+			else if (isNaN(contact)) {
+				alert('Enter valid numbers only');
+				return false;
+			}
+			else if (contact.length<10) {
+				alert('Contact Number should contain atleast 10 characters');
+				return false;
+			}
+			else {
+				alert('Submitted successfully');
+			}
+
+		}
+	</script>
+
+
+
+</body>
+</html>
